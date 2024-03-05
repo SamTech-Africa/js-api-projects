@@ -1,3 +1,6 @@
+// Instantiate GitHub
+const github = new GitHub();
+
 // Search input
 const searchUser = document.getElementById("searchUser");
 
@@ -9,9 +12,14 @@ searchUser.addEventListener("keyup", (e) => {
   // check if text is not blank
   if (usertext !== "") {
     // Make github http call
-    const github = new GitHub();
     github.getUser(usertext).then((data) => {
-      console.log(data);
+      if (data.profile.message === "Not Found") {
+        // Show alert with User not found
+      } else {
+        // Show the profie
+      }
     });
+  } else {
+    // Clear the profile
   }
 });
