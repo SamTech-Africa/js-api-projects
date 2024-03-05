@@ -1,5 +1,6 @@
-// Instantiate GitHub
+// Instantiate GitHub and UI components
 const github = new GitHub();
+const ui = new UI();
 
 // Search input
 const searchUser = document.getElementById("searchUser");
@@ -17,6 +18,7 @@ searchUser.addEventListener("keyup", (e) => {
         // Show alert with User not found
       } else {
         // Show the profie
+        ui.showProfile(data.profile);
       }
     });
   } else {
