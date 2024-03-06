@@ -31,6 +31,7 @@ class UI {
     `;
   }
 
+  // Show alert message
   showAlert(message, className) {
     // Clear any remaining alerts
     this.clearAlerts();
